@@ -58,7 +58,7 @@ st.markdown(
     """
     <div style="background-color: #0047AB; padding: 10px; border-radius: 10px; margin-bottom: 20px;">
         <h1 style="color: white; text-align: center;">California Housing Price Prediction 1990</h1>
-        <h3 style="color: white; text-align: center;">by FourZero Productions</h3>
+        <h3 style="color: white; text-align: center;">by Four Zero Productions</h3>
     </div>
     """, unsafe_allow_html=True
 )
