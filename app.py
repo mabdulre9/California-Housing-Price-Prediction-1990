@@ -16,8 +16,13 @@ def add_derived_features(data):
     data['population_per_household'] = data['population'] / data['households']
     return data
 
+# Cache the model loading process
+@st.cache_resource
+def load_pipeline():
+    return load("model_compressed.pkl")
+
 # Load the trained pipeline
-pipeline = load("model_compressed.pkl")
+pipeline = load_pipeline()
 
 # Define the function for user input
 def user_input_features():
@@ -26,14 +31,14 @@ def user_input_features():
         <h2 style="color: #FF6F61;">Input Parameters</h2>
         """, unsafe_allow_html=True)
     
-    longitude = st.sidebar.number_input("Longitude", value=-122.23, step=0.01)
-    latitude = st.sidebar.number_input("Latitude", value=37.88, step=0.01)
-    housing_median_age = st.sidebar.number_input("Housing Median Age", value=41, step=1)
-    total_rooms = st.sidebar.number_input("Total Rooms", value=880, step=1)
-    total_bedrooms = st.sidebar.number_input("Total Bedrooms", value=129, step=1)
-    population = st.sidebar.number_input("Population", value=322, step=1)
-    households = st.sidebar.number_input("Households", value=126, step=1)
-    median_income = st.sidebar.number_input("Median Income", value=8.3252, step=0.01)
+    longitude = st.slider("Longitude", -124.848974, -114.409998)
+    latitude = st.slider("Latitude", 32.534156, 42.009518)
+    housing_median_age = st.sidebar.number_input("Housing Median Age", value=41)
+    total_rooms = st.sidebar.number_input("Total Rooms", value=880)
+    total_bedrooms = st.sidebar.number_input("Total Bedrooms", value=129)
+    population = st.sidebar.number_input("Population", value=322)
+    households = st.sidebar.number_input("Households", value=126)
+    median_income = st.sidebar.number_input("Median Income", value=8.3252)
     ocean_proximity = st.sidebar.selectbox(
         "Ocean Proximity", 
         options=["<1H OCEAN", "INLAND", "ISLAND", "NEAR BAY", "NEAR OCEAN"]
