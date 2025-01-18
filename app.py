@@ -69,7 +69,7 @@ st.markdown(
 )
 
 st.markdown("""
-This application predicts the **Median House Value** in California based on input data provided by the user.
+This application predicts California's Median House Value based on user-provided input. Click the arrow in the top-left corner to access the sidebar and set various input parameters.
 """)
 
 # Get user inputs
