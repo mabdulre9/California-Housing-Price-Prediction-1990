@@ -62,7 +62,7 @@ def user_input_features():
 st.markdown(
     """
     <div style="background-color: #0047AB; padding: 10px; border-radius: 10px; margin-bottom: 20px;">
-        <h1 style="color: white; text-align: center;">California Housing Price Prediction 1990</h1>
+        <h1 style="color: white; text-align: center;">California Housing Price Prediction</h1>
         <h3 style="color: white; text-align: center;">by 22-EE-40</h3>
     </div>
     """, unsafe_allow_html=True
